@@ -2,3 +2,19 @@
  header("Content-type: text/x-csv");
  header("Content-Disposition: attachment; filename=Reports.csv");
   echo $csv; // csv contents data seperate by comma for next column and full line space for next row 
+
+from temp table
+<?php 
+ $db = \Config\Database::connect();
+ $csv = $db->table('csv')->get()->getResultArray();
+ $csv2 = '';
+    foreach($csv as $row){
+        $csv2 = $csv2.'
+'.$row['ASIN'].','.$row['date'];
+    }
+    
+    header("Content-type: text/x-csv");
+    header("Content-Disposition: attachment; filename=ALTER_".Date('d-M').'.csv');
+    echo $csv2;
+    $db->table('csv')->truncate('csv');exit;
+ ?>
