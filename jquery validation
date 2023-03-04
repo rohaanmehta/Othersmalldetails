@@ -18,3 +18,22 @@
                  }
         });
     });
+
+//change password 
+        if ($('#password').val() != $('#confirm_password').val()) {
+          $('#err_confirm_password').html(' Password doesnot match');
+          valid = 1;
+        } else {
+          $('#err_confirm_password').html('');
+        }
+         if (valid == 1) {
+            return true;
+         }
+         
+//radio button
+       if ($('#term').prop('checked') == false) {
+          $('#err_term').html('Please check terms and conditions');
+          valid = 1;
+        } else {
+          $('#err_term').html('');
+        }
