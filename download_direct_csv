@@ -18,3 +18,4 @@ from temp table
     echo $csv2;
     $db->table('csv')->truncate('csv');exit;
  ?>
+oprn this in new window by href
