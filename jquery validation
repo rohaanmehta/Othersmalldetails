@@ -1,0 +1,16 @@
+         <div class='text-danger' id="err_email"></div>
+
+        var array = ['firstname', 'lastname', 'users_gender', 'dob', 'address', 'city', 'zip', 'Country', 'States', 'email', 'number', 'password', 'hint_question', 'hint_answer'];
+        var valid = 0;
+        for (var i = 0; i < array.length; i++) {
+          if ($('#' + array[i]).val() == '') {
+            $('#err_' + array[i]).html(array[i] + ' field is required');
+            valid = 1;
+          } else {
+            $('#err_' + array[i]).html('');
+          }
+        }
+        
+        if (valid == 1) {
+          return true;
+        }
