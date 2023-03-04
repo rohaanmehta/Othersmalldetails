@@ -20,15 +20,18 @@
     });
 
 //change password 
-        if ($('#password').val() != $('#confirm_password').val()) {
-          $('#err_confirm_password').html(' Password doesnot match');
-          valid = 1;
-        } else {
-          $('#err_confirm_password').html('');
-        }
-         if (valid == 1) {
-            return true;
-         }
+            var valid = 0;
+            if($('#password').val() != ''){
+                if ($('#password').val() != $('#confirm_password').val()) {
+                    $('#err_confirm_password').html('Password doesnot match');
+                    valid = 1;
+                } else {
+                    $('#err_confirm_password').html('');
+                }
+            }else{
+                $('#err_confirm_password').html('Password Cannot be Empty');
+                valid = 1;               
+            }
          
 //radio button
        if ($('#term').prop('checked') == false) {
