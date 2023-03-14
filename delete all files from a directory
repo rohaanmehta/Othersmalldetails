@@ -1,0 +1,8 @@
+        $files = glob(FCPATH . 'uploads/temp/badgecsv/*.csv');
+        if (!empty($files)) {
+            foreach ($files as $file) {
+                @unlink($file);
+            }
+        }
+        
+        /ci3
